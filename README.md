@@ -130,7 +130,7 @@ Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo LICENSE
 ---
 ## Contacto
 
-Para cualquier consulta o información adicional, por favor contacta a:
+Para cualquier consulta, esquemas de conexionado o información adicional, por favor contacta a:
 
 **Luis Moricz**  
 Correo: luis.moricz.somorrostro@gmail.com
