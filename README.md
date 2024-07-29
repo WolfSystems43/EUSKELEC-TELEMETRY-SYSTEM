@@ -112,14 +112,27 @@ El código base de este proyecto ha sido desarrollado desde cero por Luis Moricz
     - Instalar el intercomunicador en el casco del piloto.
     - Configurar la comunicación VOIP según las necesidades del equipo.
 
-## Contribuciones
+## Agradecimientos
 
-Las contribuciones son bienvenidas. Por favor, realiza un fork del repositorio y envía un pull request con tus mejoras.
+Queremos expresar nuestro más sincero agradecimiento al **Centro de Formación Somorrostro** por su invaluable apoyo y formación, que ha sido fundamental para el desarrollo de este proyecto.
+
+Nuestro agradecimiento también se extiende a todos los integrantes del **equipo Somoracers 2024**, quienes con su dedicación y esfuerzo han participado en Euskelec, contribuyendo significativamente al éxito del proyecto.
+
+Gracias a su compromiso y trabajo en equipo, hemos logrado superar desafíos técnicos y alcanzar nuestros objetivos con éxito. Su colaboración y espíritu de equipo han sido una fuente de inspiración y han sido cruciales para la consecución de este proyecto.
+
+**Prohibición de Distribución:** La redistribución o resubida de este repositorio a cualquier otra plataforma o canal que no sea este repositorio oficial de GitHub está prohibida. La distribución no autorizada de este contenido es ilegal y está sujeta a acciones legales.
+
 
 ## Licencia
 
 Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo LICENSE para más detalles.
 
 ---
+## Contacto
+
+Para cualquier consulta o información adicional, por favor contacta a:
+
+**Luis Moricz**  
+Correo: luis.moricz.somorrostro@gmail.com
 
 Este proyecto representa una solución avanzada y personalizada para el monitoreo y control de sistemas de powertrain en vehículos de competición, integrando tecnología de vanguardia para asegurar un rendimiento óptimo y seguro.
