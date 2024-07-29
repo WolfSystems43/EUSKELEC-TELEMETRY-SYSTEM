@@ -16,6 +16,7 @@ Este repositorio contiene el proyecto de telemetría 5G desarrollado desde cero 
 - **Conectores Cannon Macho-Hembra**: Conectores utilizados para toda la sensórica, garantizando conexiones seguras y resistentes.
 - **Malla Protectora y Tubo Corrugado**: Utilizados para proteger los cables de conexión, añadiendo una capa adicional de durabilidad y resistencia a las condiciones del entorno.
 - **Piezas en 3D**: Piezas impresas en 3D diseñadas para montar la pantalla ILI9341 y el soporte de la cámara en el monoplaza.
+- **Conexión UARTCAN a USB**: Conexión para extraer información completa de la centralita del monoplaza (EMU).
 
 ### Software
 
@@ -53,6 +54,14 @@ Este repositorio contiene el proyecto de telemetría 5G desarrollado desde cero 
 
 - **Montaje de la Pantalla ILI9341**: Se han diseñado y creado piezas impresas en 3D para montar la pantalla en el vehículo de forma segura y accesible para el piloto.
 - **Soporte de la Cámara**: Se han diseñado soportes específicos impresos en 3D para montar la cámara en el monoplaza, asegurando una posición óptima y una sujeción firme.
+
+### Conexión UARTCAN a USB
+
+- Se ha implementado una conexión UARTCAN a USB para extraer información completa de la centralita del monoplaza (EMU). Esto permite una integración total con el sistema de gestión del vehículo, facilitando la recolección de datos críticos para el análisis y ajuste del rendimiento.
+
+### PMU
+
+- Nosotros hemos creado la Unidad de Potencia y Gestión (PMU) que integra todos estos componentes y sistemas, proporcionando una solución completa y optimizada para el control y monitoreo del powertrain.
 
 ## Código Base
 
