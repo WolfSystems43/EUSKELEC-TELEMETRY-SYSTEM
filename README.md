@@ -99,7 +99,7 @@ Desarrollado desde cero por Luis Moricz, incluye:
 
 3. **Configurar el Router 5G:**
    
--Insertar la SIM y asegurar la conexión 5G.
+- Insertar la SIM y asegurar la conexión 5G.
 
 4. **Configurar Mosquitto y Grafana:**
    
