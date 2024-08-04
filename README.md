@@ -103,10 +103,10 @@ Desarrollado desde cero por Luis Moricz, incluye:
 - Instalar y configurar Mosquitto y Grafana en el servidor.
   
 5. **Cargar el Código en el ESP8266:**
--Conectar el ESP8266 al ordenador y cargar el código.
+- Conectar el ESP8266 al ordenador y cargar el código.
 
 6. **Configurar el Intercomunicador VOIP:**
--Instalar y configurar el intercomunicador en el casco del piloto.
+- Instalar y configurar el intercomunicador en el casco del piloto.
 
 ### Agradecimientos
 Queremos expresar nuestro más sincero agradecimiento al Centro de Formación Somorrostro y a todos los integrantes del equipo Somoracers 2024 por su apoyo y dedicación.
