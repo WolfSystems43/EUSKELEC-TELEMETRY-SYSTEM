@@ -118,3 +118,20 @@ Queremos expresar nuestro más sincero agradecimiento al Centro de Formación So
 
 ### Prohibición de Distribución
 La redistribución o resubida de este repositorio a cualquier otra plataforma o canal está estrictamente prohibida sin la autorización previa del autor.
+
+
+![image](https://github.com/user-attachments/assets/e14e727e-f713-4c73-8c6a-c626ec5189b9)
+
+![image](https://github.com/user-attachments/assets/176216af-a837-49b9-93b4-49cd7bae7fbd)
+
+![image](https://github.com/user-attachments/assets/cbe5c084-960a-4fbe-b683-c73a07b0ef1b)
+
+![image](https://github.com/user-attachments/assets/439af279-7163-4c90-9259-d0f268463cd5)
+
+![image](https://github.com/user-attachments/assets/b9d91027-aad2-4ba6-8100-e0da6ec50ccc)
+
+**Reprogramación centralita Guilera (STAGE 1) mapa ECO, mapa SPORT:** (https://file.io/A3gUTHj06dgv)
+
+
+
+
