@@ -96,7 +96,7 @@ Desarrollado desde cero por Luis Moricz, incluye:
 -Añadir la URL del gestor de placas ESP8266: http://arduino.esp8266.com/stable/package_esp8266com_index.json.
 -Instalar las bibliotecas necesarias.
 
-3.**Configurar el Router 5G:**
+3. **Configurar el Router 5G:**
 -Insertar la SIM y asegurar la conexión 5G.
 
 4. **Configurar Mosquitto y Grafana:**
