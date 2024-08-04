@@ -1,15 +1,15 @@
-# Telemetría 5G para Euskelec
+**Telemetría 5G para Euskelec**
 
 Este repositorio contiene el proyecto de telemetría 5G desarrollado desde cero por Luis Moricz para el equipo Euskelec, utilizando un ESP8266 como microcontrolador principal, junto con diversos sensores y componentes para el monitoreo y control de un sistema de powertrain en vehículos eléctricos de competición.
 
-## Componentes del Sistema
+#### **Componentes del Sistema**
 
-### Hardware
+**Hardware**
 
 - **ESP8266**: Microcontrolador basado en WiFi, encargado de la recolección y transmisión de datos.
 - **Sensor DHT22**: Sensor digital de temperatura y humedad, utilizado para monitorear las condiciones ambientales dentro del compartimiento del powertrain.
 - **MPU6050**: Sensor que combina acelerómetro y giroscopio, utilizado para medir el ángulo y la velocidad del giro del volante.
-- **Pantalla ILI9341**: Pantalla TFT de 2.8 pulgadas, utilizada para mostrar información en tiempo real al piloto.
+- **Pantalla ILI9341**: Pantalla TFT de 2.8 pulgadas, utilizada para mostrar información en tiempo real al piloto. Esta pantalla ofrece varios menús que visualizan datos como: temperatura del motor, temperatura del compartimento del powertrain, revoluciones del motor eléctrico, trazado del circuito, tiempos (mejor vuelta, última vuelta, diferencia con otros pilotos), velocidad, posición de carrera, estado del botón de radio y luces de posición.
 - **Router 5G**: Dispositivo de red que proporciona conectividad 5G mediante una SIM, permitiendo la transmisión de datos en una red privada.
 - **Intercomunicador VOIP**: Sistema de comunicación integrado en el casco del piloto para permitir la comunicación en tiempo real con el equipo de soporte.
 - **Zócalo de Conexión Especial**: Utilizado para la conexión del ESP8266, proporcionando una conexión robusta y fiable.
@@ -17,53 +17,55 @@ Este repositorio contiene el proyecto de telemetría 5G desarrollado desde cero 
 - **Malla Protectora y Tubo Corrugado**: Utilizados para proteger los cables de conexión, añadiendo una capa adicional de durabilidad y resistencia a las condiciones del entorno.
 - **Piezas en 3D**: Piezas impresas en 3D diseñadas para montar la pantalla ILI9341 y el soporte de la cámara en el monoplaza.
 - **Conexión UARTCAN a USB**: Conexión para extraer información completa de la centralita del monoplaza (EMU).
+- **GPS NEO6M**: Módulo GPS utilizado para obtener datos precisos de velocidad, trazado del circuito y posiciones relativas a otros pilotos.
 
-### Software
+**Software**
 
 - **Mosquitto MQTT**: Broker MQTT de código abierto utilizado para la transmisión de datos entre el ESP8266 y el servidor.
 - **Grafana**: Herramienta de análisis y visualización de datos, utilizada para crear un dashboard personalizado donde se visualizan los datos de telemetría en tiempo real.
 
-## Descripción del Proyecto
+#### **Descripción del Proyecto**
 
-### Arquitectura del Sistema
+**Arquitectura del Sistema**
 
-1. **Recolección de Datos**:
-    - **Temperatura y Humedad**: El sensor DHT22 mide la temperatura y la humedad dentro del compartimiento del powertrain. Estos datos son críticos para asegurar que los componentes operen dentro de los rangos seguros y prevenir sobrecalentamientos o condiciones que puedan afectar el rendimiento.
-    - **Giro del Volante**: El sensor MPU6050 mide el ángulo y la velocidad del giro del volante, proporcionando datos precisos sobre el comportamiento del vehículo y las acciones del piloto.
+- **Recolección de Datos**:
+  - **Temperatura y Humedad**: El sensor DHT22 mide la temperatura y la humedad dentro del compartimiento del powertrain, asegurando que los componentes operen dentro de los rangos seguros.
+  - **Giro del Volante**: El sensor MPU6050 mide el ángulo y la velocidad del giro del volante, proporcionando datos precisos sobre el comportamiento del vehículo y las acciones del piloto.
+  - **Velocidad y Posición**: Utilizando un módulo GPS NEO6M instalado en la caja de telemetría, se obtienen datos de velocidad y trazado, así como las posiciones relativas a otros pilotos y demás información relevante.
+  
+- **Procesamiento y Visualización Local**:
+  - **Pantalla ILI9341**: Los datos recolectados se muestran en tiempo real en la pantalla TFT, proporcionando al piloto información crítica como la temperatura del motor, revoluciones, tiempos de vuelta, posición de carrera, velocidad, estado del botón de radio y luces de posición.
 
-2. **Procesamiento y Visualización Local**:
-    - **Pantalla ILI9341**: Los datos recolectados se muestran en tiempo real en la pantalla TFT, proporcionando al piloto información crítica como la temperatura, humedad y el ángulo del volante.
+- **Transmisión de Datos**:
+  - **Router 5G**: Los datos son transmitidos en tiempo real a través de una red 5G privada, asegurando una transmisión rápida y segura.
+  - **Mosquitto MQTT**: El ESP8266 envía los datos al broker MQTT Mosquitto, que gestiona la transmisión de datos entre el dispositivo y el servidor.
 
-3. **Transmisión de Datos**:
-    - **Router 5G**: Los datos son transmitidos en tiempo real a través de una red 5G privada. El router 5G utiliza una SIM para conectarse a la red, asegurando una transmisión rápida y segura.
-    - **Mosquitto MQTT**: El ESP8266 envía los datos al broker MQTT Mosquitto, que se encarga de gestionar la transmisión de datos entre el dispositivo y el servidor.
+- **Visualización Remota**:
+  - **Dashboard en Grafana**: Los datos son procesados y visualizados en un dashboard personalizado en Grafana, permitiendo al equipo de soporte monitorear el rendimiento del vehículo en tiempo real, analizar datos históricos y recibir alertas sobre condiciones críticas.
 
-4. **Visualización Remota**:
-    - **Dashboard en Grafana**: Los datos son procesados y visualizados en un dashboard personalizado en Grafana. Esto permite al equipo de soporte monitorear el rendimiento del vehículo en tiempo real, analizar datos históricos y recibir alertas sobre cualquier condición crítica.
+- **Comunicación en Tiempo Real**:
+  - **Intercomunicador VOIP**: El sistema incluye un intercomunicador VOIP integrado en el casco del piloto, permitiendo la comunicación en tiempo real con el equipo de soporte para una coordinación efectiva durante la carrera.
 
-5. **Comunicación en Tiempo Real**:
-    - **Intercomunicador VOIP**: El sistema incluye un intercomunicador VOIP integrado en el casco del piloto, permitiendo la comunicación en tiempo real con el equipo de soporte para una coordinación efectiva durante la carrera.
+**Conexiones y Protección**
 
-### Conexiones y Protección
+- **Zócalo de Conexión Especial**: La conexión hacia el ESP8266 se realiza mediante un zócalo de conexión especial, garantizando una conexión segura y robusta que facilita el mantenimiento y reemplazo del microcontrolador.
+- **Conectores Cannon Macho-Hembra**: Toda la sensórica se conecta utilizando conectores macho-hembra Cannon, asegurando conexiones seguras y resistentes a las vibraciones y condiciones adversas del entorno de competición.
+- **Malla Protectora y Tubo Corrugado**: Los cables de conexión están protegidos con malla sobre un tubo corrugado, añadiendo durabilidad y resistencia a las condiciones del entorno, previniendo daños por abrasión y mejorando la organización de los cables.
 
-- **Zócalo de Conexión Especial**: La conexión hacia el ESP8266 se ha realizado mediante un zócalo de conexión especial, garantizando una conexión segura y robusta que facilita el mantenimiento y reemplazo del microcontrolador.
-- **Conectores Cannon Macho-Hembra**: Toda la sensórica se ha conectado utilizando conectores macho-hembra Cannon, garantizando conexiones seguras y resistentes a las vibraciones y condiciones adversas del entorno de competición.
-- **Malla Protectora y Tubo Corrugado**: Los cables de conexión han sido protegidos con malla por encima de un tubo corrugado, añadiendo una capa adicional de durabilidad y resistencia a las condiciones del entorno, previniendo daños por abrasión y mejorando la organización de los cables.
+**Piezas en 3D**
 
-### Piezas en 3D
+- **Montaje de la Pantalla ILI9341**: Piezas impresas en 3D diseñadas para montar la pantalla de forma segura y accesible para el piloto.
+- **Soporte de la Cámara**: Soportes específicos impresos en 3D para montar la cámara en el monoplaza, asegurando una posición óptima y una sujeción firme.
 
-- **Montaje de la Pantalla ILI9341**: Se han diseñado y creado piezas impresas en 3D para montar la pantalla en el vehículo de forma segura y accesible para el piloto.
-- **Soporte de la Cámara**: Se han diseñado soportes específicos impresos en 3D para montar la cámara en el monoplaza, asegurando una posición óptima y una sujeción firme.
+**Conexión UARTCAN a USB**
 
-### Conexión UARTCAN a USB
+Se ha implementado una conexión UARTCAN a USB para extraer información completa de la centralita del monoplaza (EMU), permitiendo una integración total con el sistema de gestión del vehículo y facilitando la recolección de datos críticos para el análisis y ajuste del rendimiento.
 
-- Se ha implementado una conexión UARTCAN a USB para extraer información completa de la centralita del monoplaza (EMU). Esto permite una integración total con el sistema de gestión del vehículo, facilitando la recolección de datos críticos para el análisis y ajuste del rendimiento.
+**PMU**
 
-### PMU
+Hemos creado la Unidad de Potencia y Gestión (PMU) que integra todos estos componentes y sistemas, proporcionando una solución completa y optimizada para el control y monitoreo del powertrain.
 
-- Nosotros hemos creado la Unidad de Potencia y Gestión (PMU) que integra todos estos componentes y sistemas, proporcionando una solución completa y optimizada para el control y monitoreo del powertrain.
-
-## Código Base
+**Código Base**
 
 El código base de este proyecto ha sido desarrollado desde cero por Luis Moricz, optimizado para las necesidades específicas del equipo Euskelec. El código incluye:
 
@@ -72,63 +74,65 @@ El código base de este proyecto ha sido desarrollado desde cero por Luis Moricz
 - **Comunicación MQTT**: Implementación del protocolo MQTT para la transmisión de datos.
 - **Integración con Grafana**: Scripts para enviar datos al servidor de Grafana y configurar el dashboard.
 
-## Instalación y Configuración
+### **Instalación y Configuración**
 
-### Requisitos
+**Requisitos**
 
 - ESP8266 con entorno de desarrollo Arduino IDE.
 - Sensor DHT22.
 - MPU6050.
 - Pantalla ILI9341.
 - Router 5G con SIM activa.
+- GPS NEO6M.
 - Servidor para Mosquitto MQTT y Grafana.
 - Casco con Intercomunicador VOIP.
 
-### Pasos de Instalación
+**Pasos de Instalación**
 
 1. **Clonar el Repositorio**:
-    ```bash
-    git clone https://github.com/usuario/telemetria-5G-euskelec.git
-    ```
+   ```bash
+   git clone https://github.com/usuario/telemetria-5G-euskelec.git
+2. **Configurar el Entorno de Desarrollo:**
 
-2. **Configurar el Entorno de Desarrollo**:
-    - Instalar Arduino IDE.
-    - Añadir la URL del gestor de placas ESP8266: `http://arduino.esp8266.com/stable/package_esp8266com_index.json`.
-    - Instalar las bibliotecas necesarias para los sensores (Adafruit DHT, Adafruit MPU6050) y la pantalla (Adafruit ILI9341).
+- **Instalar Arduino IDE.**
+- **Añadir la URL del gestor de placas ESP8266**: `http://arduino.esp8266.com/stable/package_esp8266com_index.json`.
+- **Instalar las bibliotecas necesarias para los sensores**: Adafruit DHT, Adafruit MPU6050 y la pantalla (Adafruit ILI9341).
 
-3. **Configurar el Router 5G**:
-    - Insertar la SIM en el router y asegurarse de que la conexión 5G esté activa.
-    - Configurar la red privada según las especificaciones del proyecto.
+3. **Configurar el Router 5G:**
 
-4. **Configurar Mosquitto y Grafana**:
-    - Instalar Mosquitto en el servidor y configurar el broker MQTT.
-    - Instalar Grafana y configurar el dashboard para recibir y visualizar los datos de telemetría.
+- **Insertar la SIM en el router** y asegurarse de que la conexión 5G esté activa.
+- **Configurar la red privada** según las especificaciones del proyecto.
 
-5. **Cargar el Código en el ESP8266**:
-    - Conectar el ESP8266 al ordenador y cargar el código desde Arduino IDE.
-    - Realizar las conexiones físicas según el esquema de conexiones proporcionado en el repositorio.
+4. **Configurar Mosquitto y Grafana:**
 
-6. **Configurar el Intercomunicador VOIP**:
-    - Instalar el intercomunicador en el casco del piloto.
-    - Configurar la comunicación VOIP según las necesidades del equipo.
+- **Instalar Mosquitto en el servidor** y configurar el broker MQTT.
+- **Instalar Grafana** y configurar el dashboard para recibir y visualizar los datos de telemetría.
 
-## Agradecimientos
+5. **Cargar el Código en el ESP8266:**
 
-Queremos expresar nuestro más sincero agradecimiento al **Centro de Formación Somorrostro** por su invaluable apoyo y formación, que ha sido fundamental para el desarrollo de este proyecto.
+- **Conectar el ESP8266 al ordenador** y cargar el código desde Arduino IDE.
+- **Realizar las conexiones físicas** según el esquema de conexiones proporcionado en el repositorio.
 
-Nuestro agradecimiento también se extiende a todos los integrantes del **equipo Somoracers 2024**, quienes con su dedicación y esfuerzo han participado en Euskelec, contribuyendo significativamente al éxito del proyecto.
+6. **Configurar el Intercomunicador VOIP:**
 
-Gracias a su compromiso y trabajo en equipo, hemos logrado superar desafíos técnicos y alcanzar nuestros objetivos con éxito. Su colaboración y espíritu de equipo han sido una fuente de inspiración y han sido cruciales para la consecución de este proyecto.
+- **Instalar el intercomunicador en el casco del piloto.**
+- **Configurar la comunicación VOIP** según las necesidades del equipo.
 
-**Prohibición de Distribución:** La redistribución o resubida de este repositorio a cualquier otra plataforma o canal que no sea este repositorio oficial de GitHub está prohibida. La distribución no autorizada de este contenido es ilegal y está sujeta a acciones legales.
+### **Agradecimientos**
 
+Queremos expresar nuestro más sincero agradecimiento al Centro de Formación Somorrostro por su invaluable apoyo y formación, que ha sido fundamental para el desarrollo de este proyecto.
 
-## Licencia
+Nuestro agradecimiento también se extiende a todos los integrantes del equipo Somoracers 2024, quienes con su dedicación y esfuerzo han participado en Euskelec, contribuyendo significativamente al éxito del proyecto. Gracias a su compromiso y trabajo en equipo, hemos logrado superar desafíos técnicos y alcanzar nuestros objetivos con éxito. Su colaboración y espíritu de equipo han sido una fuente de inspiración y han sido cruciales para la consecución de este proyecto.
+
+### **Prohibición de Distribución**
+
+La redistribución o resubida de este repositorio a cualquier otra plataforma o canal está estrictamente prohibida sin la autorización previa del autor.
+
+### **Licencia**
 
 Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo LICENSE para más detalles.
 
----
-## Contacto
+### **Contacto**
 
 Para cualquier consulta, esquemas de conexionado o información adicional, por favor contacta a:
 
