@@ -92,20 +92,25 @@ Desarrollado desde cero por Luis Moricz, incluye:
    ```bash
    git clone https://github.com/usuario/telemetria-5G-euskelec.git
 2. **Configurar el Entorno de Desarrollo:**
--Instalar Arduino IDE.
--Añadir la URL del gestor de placas ESP8266: http://arduino.esp8266.com/stable/package_esp8266com_index.json.
--Instalar las bibliotecas necesarias.
+   
+- Instalar Arduino IDE.
+- Añadir la URL del gestor de placas ESP8266: http://arduino.esp8266.com/stable/package_esp8266com_index.json.
+- Instalar las bibliotecas necesarias.
 
 3. **Configurar el Router 5G:**
+   
 -Insertar la SIM y asegurar la conexión 5G.
 
 4. **Configurar Mosquitto y Grafana:**
+   
 - Instalar y configurar Mosquitto y Grafana en el servidor.
   
 5. **Cargar el Código en el ESP8266:**
+   
 - Conectar el ESP8266 al ordenador y cargar el código.
 
 6. **Configurar el Intercomunicador VOIP:**
+   
 - Instalar y configurar el intercomunicador en el casco del piloto.
 
 ### Agradecimientos
