@@ -67,7 +67,7 @@ Hemos creado la Unidad de Potencia y Gestión (PMU) que integra todos los compon
 
 ### Código Base
 
-Desarrollado desde cero por Luis Moricz, incluye:
+Desarrollado desde cero por Luis Izquierdo, incluye:
 - **Lectura de Sensores**: Rutinas para leer datos de los sensores DHT22 y MPU6050.
 - **Interfaz de Usuario**: Código para la visualización de datos en la pantalla ILI9341.
 - **Comunicación MQTT**: Implementación del protocolo MQTT.
