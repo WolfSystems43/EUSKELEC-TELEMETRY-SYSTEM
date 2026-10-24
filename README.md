@@ -1,6 +1,6 @@
 # Telemetría 5G para Euskelec
 
-Este repositorio contiene el proyecto de telemetría 5G desarrollado desde cero por Luis Moricz para el equipo Euskelec. Utiliza un ESP8266 como microcontrolador principal, junto con diversos sensores y componentes para el monitoreo y control de un sistema de powertrain en vehículos eléctricos de competición.
+Este repositorio contiene el proyecto de telemetría 5G desarrollado desde cero por Luis Izquierdo para el equipo Euskelec. Utiliza un ESP8266 como microcontrolador principal, junto con diversos sensores y componentes para el monitoreo y control de un sistema de powertrain en vehículos eléctricos de competición.
 
 ## Componentes del Sistema
 
